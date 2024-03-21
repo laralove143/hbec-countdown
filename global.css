@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  font-family: Verdana, sans-serif;
+  padding: 8px 16px;
+  background-color: lightgray;
+}
+
+.header-link {
+  color: black;
+  text-decoration: none;
+  transition:
+    background-color ease-in-out 0.2s,
+    color ease-in-out 0.2s;
+}
+
+.header-title {
+  margin-right: auto;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-logo {
+  height: 24px;
+  margin-right: 8px;
+}
+
+.language-switcher {
+  background-color: darkgray;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.language-switcher:hover {
+  color: white;
+  background-color: dimgray;
+}
