@@ -1,20 +1,23 @@
 const textEn = {
-  title: "HBEC Countdown"
+  title: "HBEC Countdown",
 };
 
 const textTr = {
-  title: "HBEC Geri Sayım"
+  title: "HBEC Geri Sayım",
 };
 
 function applyLocale() {
-  document.querySelectorAll("[data-key]").forEach(elem => {
+  document.querySelectorAll("[data-key]").forEach((elem) => {
     let key = elem.getAttribute("data-key");
-    let locale = new URLSearchParams(window.location.search).get("lang");
+    let locale =
+      new URLSearchParams(window.location.search).get("lang") || "tr";
+
+    document.documentElement.lang = locale;
 
     let text;
     if (locale === "en") {
       text = textEn;
-    } else {
+    } else if (locale === "tr") {
       text = textTr;
     }
 
