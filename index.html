@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title data-key="title"></title>
+    <script src="main.js" defer></script>
     <script src="locale.js" defer></script>
     <link rel="stylesheet" href="global.css" />
   </head>
@@ -17,11 +18,56 @@
           /><span data-key="headerTitle"></span>
         </a>
         <a
-          class="language-switcher header-link"
+          class="button header-link"
           data-key="langSwitcher"
           id="langSwitcher"
         ></a>
       </nav>
     </header>
+
+    <div class="content">
+      <div class="duration-picker">
+        <div class="duration-picker-unit">
+          <input
+            type="number"
+            id="hour"
+            name="hour"
+            min="0"
+            max="24"
+            placeholder="00"
+            size="2"
+          /><label for="hour" data-key="durationPickerHours"></label>
+        </div>
+
+        <div class="duration-picker-unit">
+          <input
+            type="number"
+            id="minute"
+            name="minute"
+            min="0"
+            max="24"
+            placeholder="00"
+          /><label for="minute" data-key="durationPickerMinutes"></label>
+        </div>
+
+        <div class="duration-picker-unit">
+          <input
+            type="number"
+            id="second"
+            name="second"
+            min="0"
+            max="24"
+            placeholder="00"
+          /><label for="second" data-key="durationPickerSeconds"></label>
+        </div>
+
+        <div>
+          <button
+            class="button start-countdown-button"
+            data-key="durationPickerStart"
+          ></button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

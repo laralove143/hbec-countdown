@@ -2,28 +2,32 @@ const textEn = {
   title: "HBEC Countdown",
   headerTitle: "Countdown",
   langSwitcher: "Türkçe",
+  durationPickerHours: "Hours",
+  durationPickerMinutes: "Minutes",
+  durationPickerSeconds: "Seconds",
+  durationPickerStart: "Start",
 };
 
 const textTr = {
   title: "HBEC Geri Sayım",
   headerTitle: "Geri Sayım",
   langSwitcher: "English",
+  durationPickerHours: "Saat",
+  durationPickerMinutes: "Dakika",
+  durationPickerSeconds: "Saniye",
+  durationPickerStart: "Başla",
 };
 
-function applyLocale() {
-  let locale = new URLSearchParams(window.location.search).get("lang") || "tr";
-  let text = locale === "en" ? textEn : textTr;
+const locale = new URLSearchParams(window.location.search).get("lang") || "tr";
+const text = locale === "en" ? textEn : textTr;
 
-  document.documentElement.lang = locale;
+document.documentElement.lang = locale;
 
-  let langSwitcher = document.getElementById("langSwitcher");
-  langSwitcher.href = "?lang=" + (locale === "en" ? "tr" : "en");
+const langSwitcher = document.getElementById("langSwitcher");
+langSwitcher.href = "?lang=" + (locale === "en" ? "tr" : "en");
 
-  document.querySelectorAll("[data-key]").forEach((elem) => {
-    let key = elem.getAttribute("data-key");
+for (const elem of document.querySelectorAll("[data-key]")) {
+  const key = elem.getAttribute("data-key");
 
-    elem.innerText = text[key];
-  });
+  elem.innerText = text[key];
 }
-
-document.addEventListener("DOMContentLoaded", applyLocale);
