@@ -6,7 +6,6 @@ body {
 }
 
 .button {
-  cursor: pointer;
   background-color: darkgray;
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
@@ -16,7 +15,12 @@ body {
     color ease-in-out 0.2s;
 }
 
-.button:hover {
+.button[disabled] {
+  cursor: not-allowed;
+}
+
+.button:not([disabled]):hover {
+  cursor: pointer;
   color: white;
   background-color: dimgray;
 }
@@ -51,7 +55,29 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: Tahoma, sans-serif;
+  font-family: Verdana, sans-serif;
+}
+
+.welcome-message {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+@keyframes overdueBlinkColor {
+  0%,
+  100% {
+    color: black;
+  }
+  50% {
+    color: red;
+  }
+}
+
+.content.overdue,
+.content.overdue input,
+.content.overdue button {
+  animation: overdueBlinkColor 1s infinite;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -86,6 +112,11 @@ input[type="number"] {
   font-size: 1rem;
   border-radius: 0.5rem;
   border: darkgray solid 0.1rem;
+}
+
+.duration-picker-unit input[disabled] {
+  color: black;
+  border-color: transparent;
 }
 
 .duration-picker-unit input::placeholder {

@@ -25,46 +25,54 @@
       </nav>
     </header>
 
-    <div class="content">
-      <div class="duration-picker">
+    <div class="content" id="content">
+      <div
+        class="welcome-message"
+        id="welcomeMessage"
+        data-key="welcomeMessage"
+      ></div>
+
+      <div class="duration-picker" id="durationPicker">
         <div class="duration-picker-unit">
           <input
             type="number"
-            id="hour"
-            name="hour"
+            id="hours"
+            name="hours"
             min="0"
             max="24"
             placeholder="00"
             size="2"
-          /><label for="hour" data-key="durationPickerHours"></label>
+          /><label for="hours" data-key="durationPickerHours"></label>
         </div>
 
         <div class="duration-picker-unit">
           <input
             type="number"
-            id="minute"
-            name="minute"
+            id="minutes"
+            name="minutes"
             min="0"
             max="24"
             placeholder="00"
-          /><label for="minute" data-key="durationPickerMinutes"></label>
+          /><label for="minutes" data-key="durationPickerMinutes"></label>
         </div>
 
         <div class="duration-picker-unit">
           <input
             type="number"
-            id="second"
-            name="second"
+            id="seconds"
+            name="seconds"
             min="0"
             max="24"
             placeholder="00"
-          /><label for="second" data-key="durationPickerSeconds"></label>
+          /><label for="seconds" data-key="durationPickerSeconds"></label>
         </div>
 
         <div>
           <button
             class="button start-countdown-button"
+            id="durationPickerStart"
             data-key="durationPickerStart"
+            disabled
           ></button>
         </div>
       </div>
