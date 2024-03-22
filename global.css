@@ -1,3 +1,9 @@
+@media (max-width: 600px) {
+  html {
+    font-size: 56px;
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -33,6 +39,12 @@ body {
   background-color: lightgray;
 }
 
+@media (max-width: 600px) {
+  .header {
+    font-size: 0.75rem;
+  }
+}
+
 .header-link {
   color: black;
   text-decoration: none;
@@ -40,12 +52,12 @@ body {
 
 .header-title {
   margin-right: auto;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
 .header-logo {
-  height: 1.5rem;
+  height: 1.2em;
   margin-right: 0.5rem;
 }
 
